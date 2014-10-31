@@ -15,6 +15,5 @@ public class EnvironmentObject : MonoBehaviour
     {
         if(projectileHitClip != null)
             AudioSource.PlayClipAtPoint(projectileHitClip, hitPoint);
-        GameObject.Destroy(this);
     }
 }

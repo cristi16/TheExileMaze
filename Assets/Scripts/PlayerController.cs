@@ -6,8 +6,12 @@ public class PlayerController : MonoBehaviour
     public Transform projectileSpawnPoint;
     public GameObject projectile;
     public float speed = 1f;
+
     private TextMesh log;
     private float editorRotationSpeed = 60f;
+
+    private bool doneMoving = false;
+    private bool doneShooting = false;
 
     void Start()
     {
@@ -52,18 +56,38 @@ public class PlayerController : MonoBehaviour
 
         if(Input.touchCount > 0)
         {
-            if(Input.touches[0].position.y > Screen.height / 2)
+            doneMoving = false;
+            doneShooting = false;
+
+            ProcessInput(Input.touches[0]);
+            if (Input.touchCount > 1)
+                ProcessInput(Input.touches[1]);
+        }
+    }
+
+    void ProcessInput(Touch touch)
+    {
+        if (touch.position.y > Screen.height / 2)
+        {
+            TouchPhase phase = touch.phase;
+            if (phase == TouchPhase.Began || phase == TouchPhase.Moved || phase == TouchPhase.Stationary)
             {
-                TouchPhase phase = Input.touches[0].phase;
-                if(phase == TouchPhase.Began || phase == TouchPhase.Moved || phase == TouchPhase.Stationary)
+                if(!doneMoving)
+                {
                     rigidbody.MovePosition(transform.position + transform.forward * Time.deltaTime * speed);
+                    doneMoving = true;
+                }
             }
-            else // Shoot
+        }
+        else // Shoot
+        {
+            TouchPhase phase = touch.phase;
+            if (phase == TouchPhase.Began)
             {
-                TouchPhase phase = Input.touches[0].phase;
-                if (phase == TouchPhase.Began)
+                if(!doneShooting)
                 {
                     ShootProjectile();
+                    doneShooting = true;
                 }
             }
         }

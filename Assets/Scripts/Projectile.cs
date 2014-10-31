@@ -5,13 +5,19 @@ using System.Collections;
 public class Projectile : MonoBehaviour
 {
     public float speed = 3f;
+    public float maxLifeTime = 10f;
     Vector3 direction;
+    bool moving = false;
+    float lifetime = 0f;
 
     IEnumerator Move()
     {
-        while(true)
+        while(moving)
         {
             rigidbody.MovePosition(transform.position + direction * Time.deltaTime * speed);
+            lifetime += Time.deltaTime;
+            if (lifetime > maxLifeTime)
+                GameObject.Destroy(gameObject);
             yield return null;
         }
     }
@@ -19,6 +25,7 @@ public class Projectile : MonoBehaviour
     public void StartMovement(Vector3 forward)
     {
         direction = forward;
+        moving = true;
         StartCoroutine(Move());
     }
 
@@ -29,5 +36,7 @@ public class Projectile : MonoBehaviour
         {
             hit.PlayProjectileHitSound(col.contacts[0].point);
         }
+        moving = false;
+        GameObject.Destroy(gameObject);
     }
 }
