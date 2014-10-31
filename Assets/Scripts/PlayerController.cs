@@ -44,6 +44,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             rigidbody.MovePosition(transform.position + transform.forward * Time.deltaTime * speed);
+            if (audio.isPlaying == false)
+                audio.Play();
+        }
+        else
+        {
+            if (audio.isPlaying)
+                audio.Stop();
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
