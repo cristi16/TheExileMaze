@@ -7,19 +7,17 @@ public class PlayerController : MonoBehaviour
     public GameObject projectile;
     public float speed = 1f;
     public float editorRotationSpeed = 120f;
-    public float turningAudioThreshold = 5f;
+    public float footstepsVolume = 1f;
 
     private TextMesh log;
 
     private bool doneMoving = false;
     private bool doneShooting = false;
-    private Vector3 previousEulerAngles;
 
     void Start()
     {
         log = GameObject.FindGameObjectWithTag("Log").GetComponent<TextMesh>();
         Input.gyro.enabled = true;
-        previousEulerAngles = transform.rotation.eulerAngles;
     }
     
     void Update()
@@ -29,13 +27,6 @@ public class PlayerController : MonoBehaviour
     #else
             TouchUpdate();
     #endif
-            if (Mathf.Abs(transform.rotation.eulerAngles.y - previousEulerAngles.y) > 0f)
-            {
-                if (audio.isPlaying == false)
-                    audio.Play();
-                previousEulerAngles = transform.rotation.eulerAngles;
-            }
-
 
         log.text = Input.gyro.userAcceleration.ToString();
     }
@@ -86,8 +77,18 @@ public class PlayerController : MonoBehaviour
                 if(!doneMoving)
                 {
                     rigidbody.MovePosition(transform.position + transform.forward * Time.deltaTime * speed);
+                    audio.volume = footstepsVolume;
+                    StopCoroutine(FadeOut(0.3f));
+                    if (audio.isPlaying == false)
+                        audio.Play();
                     doneMoving = true;
                 }
+            }
+            else
+            {
+                StartCoroutine(FadeOut(0.3f));
+                if (audio.isPlaying)
+                    audio.Stop();
             }
         }
         else // Shoot
@@ -101,6 +102,17 @@ public class PlayerController : MonoBehaviour
                     doneShooting = true;
                 }
             }
+        }
+    }
+
+    IEnumerator FadeOut(float time)
+    {
+        float timer = 0f;
+        while(timer < time)
+        {
+            timer += Time.deltaTime;
+            audio.volume = Mathf.Lerp(audio.volume, 0f, timer / time);
+            yield return null;
         }
     }
 
