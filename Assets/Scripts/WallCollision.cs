@@ -4,12 +4,14 @@ using System.Collections;
 public class WallCollision : MonoBehaviour
 {
     public AudioClip wallHitSound;
-    public float stunTime = 3f;
+    public AudioSource headAcheSource;
 
+    private float masterVolumeFadeTime = 1f;
     private bool isStunned = false;
     void Start()
     {
         audio.ignoreListenerVolume = true;
+        headAcheSource.ignoreListenerVolume = true;
     }
 
     void OnCollisionEnter(Collision col)
@@ -17,17 +19,36 @@ public class WallCollision : MonoBehaviour
         var hit = col.gameObject.GetComponent<EnvironmentObject>();
         if (hit != null && isStunned == false)
         {
-            AudioSource.PlayClipAtPoint(wallHitSound, col.contacts[0].point);
-            StartCoroutine( PlayStunnedSound() );
+
+            StartCoroutine(PlayStunnedSound(col.contacts[0].point));
         }
     }
 
-    IEnumerator PlayStunnedSound()
+    IEnumerator PlayStunnedSound(Vector3 point)
     {
+       
+        AudioSource.PlayClipAtPoint(wallHitSound, point);
+        yield return new WaitForSeconds(wallHitSound.length);
+
         isStunned = true;
-        AudioListener.volume = 0f;
-        yield return new WaitForSeconds(stunTime);
-        AudioListener.volume = 1f;
+        float timer = 0;
+        while(AudioListener.volume > 0f)
+        {
+            AudioListener.volume = Mathf.Lerp(1f, 0f, timer / masterVolumeFadeTime);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        headAcheSource.Play();
+        yield return new WaitForSeconds(headAcheSource.clip.length);
+
+        timer = 0;
+        while (AudioListener.volume < 1f)
+        {
+            AudioListener.volume = Mathf.Lerp(0f, 1f, timer / masterVolumeFadeTime);
+            timer += Time.deltaTime;
+            yield return null;
+        }
         isStunned = false;
     }
 }
