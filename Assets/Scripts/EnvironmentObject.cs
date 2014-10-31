@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(Pitch))]
+[RequireComponent(typeof(LowPassFilter))]
 public class EnvironmentObject : MonoBehaviour
 {
     public AudioClip projectileHitClip;
@@ -17,7 +17,7 @@ public class EnvironmentObject : MonoBehaviour
         if(projectileHitClip != null)
         {
             audio.Play();
-            GetComponent<Pitch>().sourcePoint = hitPoint.point;
+            GetComponent<LowPassFilter>().sourcePoint = hitPoint.point;
         }
     }
 }

@@ -7,16 +7,19 @@ public class PlayerController : MonoBehaviour
     public GameObject projectile;
     public float speed = 1f;
     public float editorRotationSpeed = 120f;
+    public float turningAudioThreshold = 5f;
 
     private TextMesh log;
 
     private bool doneMoving = false;
     private bool doneShooting = false;
+    private Vector3 previousEulerAngles;
 
     void Start()
     {
         log = GameObject.FindGameObjectWithTag("Log").GetComponent<TextMesh>();
         Input.gyro.enabled = true;
+        previousEulerAngles = transform.rotation.eulerAngles;
     }
     
     void Update()
@@ -26,6 +29,15 @@ public class PlayerController : MonoBehaviour
     #else
             TouchUpdate();
     #endif
+            if (Mathf.Abs(transform.rotation.eulerAngles.y - previousEulerAngles.y) > 0f)
+            {
+                if (audio.isPlaying == false)
+                    audio.Play();
+                previousEulerAngles = transform.rotation.eulerAngles;
+            }
+
+
+        log.text = Input.gyro.userAcceleration.ToString();
     }
 
     void EditorUpdate()
@@ -52,7 +64,6 @@ public class PlayerController : MonoBehaviour
     {
         Quaternion currentRotation = Input.gyro.attitude;
         transform.rotation = Quaternion.Euler(0f, 360f - (currentRotation.eulerAngles.z - 90f), 0f);
-        log.text = transform.rotation.eulerAngles.ToString();
 
         if(Input.touchCount > 0)
         {
