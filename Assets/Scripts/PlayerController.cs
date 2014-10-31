@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
                     rigidbody.MovePosition(transform.position + transform.forward * Time.deltaTime * speed);
                     audio.volume = footstepsVolume;
                     StopCoroutine(FadeOut(0.3f));
-                    if (audio.isPlaying == false)
+                    if (audio.isPlaying == false)   
                         audio.Play();
                     doneMoving = true;
                 }
