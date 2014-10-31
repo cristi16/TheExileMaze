@@ -6,9 +6,9 @@ public class PlayerController : MonoBehaviour
     public Transform projectileSpawnPoint;
     public GameObject projectile;
     public float speed = 1f;
+    public float editorRotationSpeed = 120f;
 
     private TextMesh log;
-    private float editorRotationSpeed = 90f;
 
     private bool doneMoving = false;
     private bool doneShooting = false;

@@ -34,7 +34,7 @@ public class Projectile : MonoBehaviour
         var hit = col.gameObject.GetComponent<EnvironmentObject>();
         if(hit != null)
         {
-            hit.PlayProjectileHitSound(col.contacts[0].point);
+            hit.PlayProjectileHitSound(col.contacts[0]);
         }
         moving = false;
         GameObject.Destroy(gameObject);

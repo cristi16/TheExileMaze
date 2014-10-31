@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Pitch))]
 public class EnvironmentObject : MonoBehaviour
 {
     public AudioClip projectileHitClip;
@@ -8,12 +9,15 @@ public class EnvironmentObject : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        audio.clip = projectileHitClip;
     }
 
-    public void PlayProjectileHitSound(Vector3 hitPoint)
+    public void PlayProjectileHitSound(ContactPoint hitPoint)
     {
         if(projectileHitClip != null)
-            AudioSource.PlayClipAtPoint(projectileHitClip, hitPoint);
+        {
+            audio.Play();
+            GetComponent<Pitch>().sourcePoint = hitPoint.point;
+        }
     }
 }
