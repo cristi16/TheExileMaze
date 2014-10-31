@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ProBuilderDocumentation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* ProBuilder Documentation Stylesheet -- derived from:
+/*
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 14px;
+  font-family: Consolas, "Liberation Mono", Courier, "Courier New", monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<p><img src="procore_banner.png" alt="procorebanner" /></p>
+<p><strong>&quot;ProBuilder&quot; &amp; &quot;Prototype&quot; Documentation</strong><br />
+9-16-2014;  ProBuilder v2.3.0f13 (r2856)</p>
+<p>Helpful Links:</p>
+<ul>
+<li>Check for latest documentation at: <a href="http://www.procore3d.com/docs/probuilder">www.procore3d.com/docs/probuilder</a></li>
+<li>Tutorial Videos + Full Info: <a href="http://www.procore3d.com/probuilder">www.procore3d.com/probuilder</a></li>
+<li>Support and Troubleshooting: <a href="http://www.procore3d.com/forum">www.procore3d.com/forum</a> </li>
+</ul>
+<blockquote>
+<p><strong>Optional Registration:</strong><br />
+If you would like to receive updates and info directly via email, please “Register” your purchase by sending the invoice # to <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#99;&#x6f;&#x6e;&#116;&#97;&#99;&#x74;&#x40;&#112;&#x72;&#x6f;&#x63;&#111;&#x72;&#x65;3&#x64;&#46;&#99;&#111;&#109;">&#x63;&#111;&#x6e;&#x74;&#97;c&#116;&#64;&#x70;&#x72;&#111;&#x63;&#x6f;&#114;&#x65;&#51;&#x64;&#x2e;&#x63;&#111;&#x6d;</a>. Thank you!</p>
+</blockquote>
+<p><em>Thanks for purchasing ProBuilder, your support allows us to keep updating and developing all the ProCore tools!</em></p>
+<hr />
+<h1>Table of Contents</h1>
+<ul>
+<li><a href="#helpfulLinksAndInfo">Helpful Links and Info</a></li>
+<li><a href="#whatIsProBuilder">What is ProBuilder?</a></li>
+<li><a href="#installingAndUpgrading">Installing and Upgrading</a></li>
+<li><a href="#fundamentals">Fundamentals of ProBuilder</a></li>
+<li><a href="#interfaceOverview">Interface Overview</a></li>
+<li><a href="#buildingAndEditingGeometry">Creating and Editing Geometry</a></li>
+<li><a href="#texturesAndUVs">Texturing and UVs</a></li>
+<li><a href="#colorizing">Colorizing</a></li>
+<li><a href="#entityTypes">Entity Types</a></li>
+<li><a href="#optimization">Optimization</a></li>
+<li><a href="#lightmapping">Lightmapping</a></li>
+<li><a href="#smoothingGroups">Smoothing Groups</a></li>
+<li><a href="#customizing">Customizing ProBuilder</a></li>
+<li><a href="#menuItems">Menu Items</a></li>
+<li><a href="#hintsAndTips">Hints and Tips</a></li>
+<li><a href="#keyboardShortcuts">Keyboard Shortcuts</a></li>
+<li><a href="#featureIndex">Feature Index</a></li>
+<li><a href="#featureIndex">ProBuilder vs Prototype Comparision</a></li>
+</ul>
+<hr />
+<p><a name="helpfulLinksAndInfo"></a></p>
+<h1>Helpful Links and Info</h1>
+<p><strong><a href="http://www.procore3d.com">Website</a>:</strong> The central hub for all ProCore tools, assets, and info.</p>
+<p><strong>Contact ProCore:</strong><br />
+ - Email: <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#99;&#x6f;&#x6e;&#116;&#97;&#99;&#x74;&#x40;&#112;&#x72;&#x6f;&#x63;&#111;&#x72;&#x65;3&#x64;&#46;&#99;&#111;&#109;">&#x63;&#111;&#x6e;&#x74;&#97;c&#116;&#64;&#x70;&#x72;&#111;&#x63;&#x6f;&#114;&#x65;&#51;&#x64;&#x2e;&#x63;&#111;&#x6d;</a><br />
+ - Facebook: <a href="http://www.facebook.com/probuilder3d">www.facebook.com/probuilder3d</a><br />
+ - Twitter: <a href="http://www.twitter.com/probuilder3d">www.twitter.com/probuilder3d</a> </p>
+<p><strong><a href="http://eepurl.com/waKUX">Newsletter</a>:</strong> Subscribe to receive info on ProCore tools via email, usually about once or twice a month. No spam here!</p>
+<p><strong><a href="http://www.procore3d.com/probuilder">Video Tutorials</a>:</strong> Please, take a short break to watch the video tutorials before using ProBuilder or Prototype. Make a sandwich, relax and watch the tutorials- you’ll be an expert in no time!</p>
+<p><strong><a href="http://www.procore3d.com/forum">ProCore Forum</a>:</strong> Ever-expanding and resource-rich, with a very helpful and active community. Whatever you need, look for it here, and start a new thread if you can’t find it! Especially if you have an error, bug, or issue that needs fixing, it’s best to post directly to the forums.</p>
+<p><strong>Beta Testing Group:</strong> Available to all registered ProBuilder users! You will receive a link upon registering, and can then request to join.</p>
+<hr />
+<p><a name="whatIsProBuilder"></a></p>
+<h1>What is ProBuilder?</h1>
+<blockquote>
+<p>Video Overview: <a href="http://www.youtube.com/watch?v=Nomx1LNk7r8">http://www.youtube.com/watch?v=Nomx1LNk7r8</a> </p>
+</blockquote>
+<p><strong>ProBuilder</strong> is an editor extension for the Unity 3D game engine, one that brings some very exciting and powerful new features to the engine. With ProBuilder, you can finally build, edit, and texture custom geometry with an extremely fluid, intuitive, and fast workflow. You can even manipulate UV direction, tiling, offset, rotation, and more.</p>
+<p>Using ProBuilder, you can also quickly setup very efficient collision and occlusion, and trigger volumes for events, switches, and zones.</p>
+<p><strong>Prototype</strong> is the core of ProBuilder, stripped for speed and simplicity. Using Prototype, you can quickly build great looking early-stage structures, props, walls, bunkers, vehicles, virtually anything at all. Test and tweak instantly, then replace with final models once your artists catch up- if they can! Prototype also includes ProBuilder’s ability to quickly colorize faces without adding a single draw call, so you can designate team areas, or just get creative with colorful dev textures. </p>
+<blockquote>
+<p><strong>IMPORTANT:</strong> This documentation encompasses ALL features, actions, and tools available in ProBuilder- only some are included with Prototype. If you are using/considering Prototype, please view the full <a href="#featureIndex">ProBuilder vs Prototype Comparision</a>.</p>
+</blockquote>
+<p>Whatever your project, Prototype or ProBuilder can accelerate its development, ease your stress, and ultimately allow you to ship a better finished project. Give it a try, you’ll wonder how you ever worked without it!</p>
+<hr />
+<p><a name="installingAndUpgrading"></a></p>
+<h1>Installing and Upgrading</h1>
+<blockquote>
+<p>Video Tutorial: <a href="http://www.youtube.com/watch?v=TXV0Jn7Vs9Q">http://www.youtube.com/watch?v=TXV0Jn7Vs9Q</a></p>
+</blockquote>
+<p><strong>WARNING:</strong> The upgrade process is NOT reversible, and if an error occurs, you will almost certainly lose all your work. Make a backup of your entire project!</p>
+<p><strong>Step 1: Import the Unity Package</strong></p>
+<ul>
+<li>
+<p>If you’re installing into a new project, The Install Window should appear automatically.  If it does not, navigate to “Tools &gt; [name of package] &gt; Upgrade / Install”.</p>
+</li>
+<li>
+<p>If this is an upgrade- congrats, all done! Otherwise, a window will appear with several options, and a bright green “Install” button.</p>
+</li>
+</ul>
+<p><strong>Step 2: Select Install Type</strong></p>
+<ul>
+<li>
+<p>Release is the standard installation type - it provides the core and Editor utilities as libraries, meaning they do not need to be recompiled along with your existing project.  
+</p>
+</li>
+<li>
+<p>Alternatively, you may choose to install the source version (ProBuilder only), providing complete access to all scripts, etc.  If you choose to install source, please note that you will need to remove any previous ProBuilder installs prior to running the installation process.</p>
+</li>
+<li>
+<p>When ready, click “Install” - ProBuilder will unpack and install the chosen version.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>NOTE:</strong> If you are upgrading an existing ProBuilder project, the install process should automatically begin with no interaction necessary.  If the install window opens, this typically means that the install script cannot locate the old ProBuilder installation.  Please make sure that the older ProBuilder folder is located at the path &quot;Assets/6by7/ProBuilder&quot;.</p>
+</blockquote>
+<hr />
+<p><a name="fundamentals"></a></p>
+<h1>Fundamentals of Using ProBuilder</h1>
+<blockquote>
+<p>Video Tutorial: <a href="http://www.youtube.com/watch?v=Tylp-UzEm84">http://www.youtube.com/watch?v=Tylp-UzEm84</a></p>
+</blockquote>
+<p>With ProBuilder, you can build, edit, unwrap, and texture geometry, right inside the Unity editor, similar to 3D modeling in tools like 3DS Max, Maya, or Blender. Obviously, that's a lot of potential complication, but we won't let that happen! To keep your Unity workflow smooth and complication-free, ProBuilder uses simple, quick-to-swap, Edit Modes.</p>
+<p>New in ProBuilder v2.3, there are only 2 Edit Modes, <strong>Object</strong> and <strong>Element:</strong></p>
+<ul>
+<li><strong>Object</strong> mode is just what it sounds- standard Unity control of objects. Nothing different here, really.</li>
+<li>
+<strong>Element</strong> mode is where ProBuilder gets sexy- here, you can edit the mesh, unwrap uvs, assign textures per-face, and much, much more! In <strong>Element</strong> mode, you have 3 sub-modes:
+<ul>
+<li>Vertices</li>
+<li>Edges</li>
+<li>Faces</li>
+</ul>
+</li>
+</ul>
+<p>While using ProBuilder, you will always be in one of these two Edit Modes (<strong>Object</strong> or <strong>Element</strong>). The currently active mode is displayed by the &quot;Mode Indicator&quot; at the top of the Unity SceneView. This &quot;Mode Indicator&quot; can be clicked to swap between modes, or (much better!) you can use keyboard shortcuts.</p>
+<p><strong>Editing Geometry,</strong> or &quot;3D Modeling&quot;, is simple and exactly as you would expect: enter <strong>Element</strong> mode, then proceed to edit by Vertex, Edge, or Face, using standard Unity controls (ie, Move, Rotate, and Scale). Nothing new to learn! Then, use the GUI Panel to perform more complex actions like Flipping, Bridging, Connecting, Welding, etc. See the <a href="#interfaceOverview">Interface</a> and <a href="#buildingAndEditingGeometry">Geometry</a> section for full details!</p>
+<blockquote>
+<p>Fun Tip: Select a Face, then try holding &quot;SHIFT&quot; while Moving, Rotating, or even Scaling- hooray, instant extrusion!</p>
+</blockquote>
+<p><strong>Applying Materials and UV Editing</strong>, or &quot;Texturing&quot;, has been completely rewritten for ProBuilder v2.3. You now have both <strong>Auto-UV</strong> and <strong>Manual UV</strong> unwrapping options for both fast and fine-grained control. Simply open the &quot;UV Editor Window&quot;, then enter <strong>Element</strong> mode and edit the UVs by vertex, edge or face. Changes are reflected immediately in the Unity SceneView- zero guesswork. Similar to <strong>Geometry Editing</strong>, the UV Actions Panel provides access to complex actions like Sew, Collapse, Project Faces, and so forth. See the &quot;Interface Overview&quot; and &quot;Texturing&quot; sections for full details on the completely new, and much improved, Texturing/Material system.</p>
+<p><strong>But WAIT there's more!:</strong> ProBuilder offers many other tools and features, designed to aid in level design, prototyping, and final art/production. Items like:</p>
+<ul>
+<li>ProBuilderize: Turn any mesh into a ProBuilder Object</li>
+<li>Vertex Coloring</li>
+<li>Export to OBJ</li>
+<li>Custom &quot;Trigger&quot; and &quot;Collider&quot; entity types</li>
+<li>...and much, much more!</li>
+</ul>
+<hr />
+<p><a name="interfaceOverview"></a></p>
+<h1>Interface Overview</h1>
+<blockquote>
+<p>Video Tutorial: <a href="http://www.youtube.com/watch?v=U7HEG0iKlzU">http://www.youtube.com/watch?v=U7HEG0iKlzU</a></p>
+</blockquote>
+<h2>Opening the GUI Panel</h2>
+<blockquote>
+<p>Making ProBuilder both powerful AND incredibly user-friendly is Priority #1 for us. ProBuilder v2.3 takes this to a whole new level! We are <strong>seriously</strong> excited to show off this new GUI + interface, so please, please send us any comments, questions, or feedback!</p>
+</blockquote>
+<p>In order to create or edit with ProBuilder, you will need the GUI Panel open. This is done by selecting from the top menu bar in Unity: </p>
+<p><code>Tools &gt; ProBuilder &gt; Open Probuilder Window</code></p>
+<p>This will open the GUI Panel, which you can leave floating, or dock. We recommend docking in a vertical position with minimal horizontal size, to use the least amount of space.</p>
+<h2>Using the ProBuilder GUI Panel</h2>
+<p>New for ProBuilder v2.3, the GUI Panel is dynamic- it will change based on what you have selected, and the current Edit Mode, similar to Unity's Inspector Panel. This allows ProBuilder to display all currently relevant actions in a single, clean panel.</p>
+<p>Further, all action buttons are now text-based, instead of icons. It doesn't look quite as pretty, but you'll never have to wonder &quot;what does that icon mean again?&quot;.</p>
+<p><strong>Panel Area (1) - Element Modes (Vertex, Edge, Face)</strong></p>
+<p>At the very top of the GUI Panel, and always available, are the 3 <strong>Element</strong> mode buttons: Vertex, Edge, and Face. </p>
+<p>Click the <strong>Element</strong> you would like to edit, and ProBuilder will instantly move into that <strong>Element</strong> mode, allowing you to edit the object.</p>
+<blockquote>
+<p>ProTip: You can also hit <code>&quot;G&quot;</code> on your keyboard to toggle in/out of <strong>Element</strong> mode, and <code>&quot;H&quot;</code> to swap between Vertex, Edge, and Face. Hitting <code>&quot;Escape&quot;</code> will always exit to <strong>Object</strong> mode.</p>
+</blockquote>
+<p>Once in an <strong>Element</strong> mode, you can click again on it's button to exit <strong>Element</strong> mode, and return to Unity-standard <strong>Object</strong> mode.</p>
+<blockquote>
+<p><strong>Example:</strong> Select an object, then click on the <strong>Vertex</strong> button- the object will now show it's vertices, which you can edit. Then, click on the <strong>Edge</strong> button, to show and edit by edge. Finished editing? Click again on the <strong>Edge</strong> button, since you are still in that mode, to toggle out of editing and back to <strong>Object</strong> mode.</p>
+</blockquote>
+<p><strong>Panel Area (2) - Tools</strong></p>
+<p>The <strong>Tools</strong> section is also always available in the main GUI Panel. These buttons will open separate, floating panels with the following uses:</p>
+<ul>
+<li>
+Shape
+<ul>
+<li>Opens the <strong>New Shape</strong> panel, so you can create new ProBuilder objects from the various templates available, including Pipe, Arch, Dome, Door, and others. See the <a href="#buildingAndEditingGeometry">Creating and Editing Geometry</a> section for details.</li>
+</ul>
+</li>
+<li>
+Material
+<ul>
+<li>Opens the <strong>Material Palette</strong> for quick access to setting materials per-face on ProBuilder Objects. See the <a href="#texturesAndUVs">Texturing and UVs</a> section for details.</li>
+</ul>
+</li>
+<li>
+UV Editor
+<ul>
+<li>Opens the powerful new <strong>UV Editor</strong> window! This is where you control all UV settings, both Auto and Manual. There is a lot to cover here, so be sure to view the <a href="#texturesAndUVs">Texturing and UVs</a> section.</li>
+</ul>
+</li>
+<li>
+Vertex Colors
+<ul>
+<li>Opens the <strong>Vertex Color Palette</strong> for applying vertex colors with ProBuilder. See the <a href="#colorizing">Vertex Colors</a> section for details, this is a fun and handy tool!</li>
+</ul>
+</li>
+<li>
+Smoothing
+<ul>
+<li>Opens the <strong>Smoothing Groups</strong> panel that allows you to set custom smooth and hard edges on your geometry. You guessed it- see the <a href="#smoothingGroups">Smoothing Groups</a> section for details.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Panel Area (3) - Geometry Actions</strong></p>
+<p>The 3rd section of the main GUI Panel is the truly dynamic area- here you can always see all available Geometry Actions, based on your current Edit Mode and selection. See the <a href="#buildingAndEditingGeometry">Creating and Editing Geometry</a> section for details.</p>
+<p><strong>Panel Area (4) - Entity Actions</strong></p>
+<p>The bottom area of the main GUI Panel is reserved for Entity Actions. These are used to convert ProBuilder Objects into special Entity Types, and toggle on/off the visibility of each. Don't underestimate how useful these can be! See the &quot;Entity Types&quot; section for details.</p>
+<hr />
+<p><a name="buildingAndEditingGeometry"></a></p>
+<h1>Creating &amp; Editing Geometry (3D Modeling)</h1>
+<p><em>...being a more detailed and informative treatise on the finer points of 3D modeling and editing within ProBuilder</em></p>
+<blockquote>
+<p>Video Tutorial: <a href="http://www.youtube.com/watch?v=c8GbEfi51Cc">http://www.youtube.com/watch?v=c8GbEfi51Cc</a></p>
+<p><strong>New to 3D Modeling?</strong> This documentation can't be a full guide to 3D modeling in general, so we highly recommend searching online for good &quot;Introduction to 3D Modeling&quot; courses- any will do for learning the basic techniques, guidelines, best practices, etc.</p>
+</blockquote>
+<h2>Creating Geometry</h2>
+<p>ProBuilder is similar to most major 3D modeling tools, in that you start with basic geometric shape, then build upon that geometry to create your own, personal, Works of Wonder (certainly, nothing less!).</p>
+<p><strong>Creating Your First ProBuilder Object</strong></p>
+<p>The simplest and most often used shape, is a 1x1x1 meter cube. You can instantly spawn this cube into your Scene by pressing <code>&quot;Ctrl-K&quot;</code>.</p>
+<p><strong>Creating Complex ProBuilder Objects</strong></p>
+<p>ProBuilder also offers a (growing!) variety of more advanced shapes to choose from, all with unique generation options. Give them all a try, as they can save you a lot of time and trouble! You customize and spawn these shapes through the <strong>Shape Panel</strong>.</p>
+<blockquote>
+<p>ProTip: You can create new ProBuilder Objects in both <strong>Object</strong> and <strong>Element</strong> modes! There is no need to switch between modes when creating new, or duplicating existing, ProBuilder Objects.</p>
+</blockquote>
+<p>This panel can be opened at any time from the main ProBuilder GUI Panel (<strong>&quot;Shape&quot;</strong> button in the <strong>Tools</strong> section), or by pressing <code>&quot;Ctrl-Shift-K&quot;</code> on the keyboard.</p>
+<p>Upon opening the <strong>Shape Panel</strong>, you will see the <strong>Shape Preview</strong>, a blue-textured ProBuilder Object, appear in the Scene. You can move, rotate, and scale the <strong>Shape Preview</strong> just like any other object, before committing it. However, it is only a preview, and will disappear when the <strong>Shape Panel</strong> is closed.</p>
+<p><strong>Shape Panel GUI</strong></p>
+<ul>
+<li><strong>Show Preview:</strong> Checkbox to toggle on/off display of the Shape Preview</li>
+<li><strong>Center Preview:</strong> Click to center the Shape Preview in front of you, in the the Scene</li>
+<li><strong>Shape Selector:</strong> Choose a shape from the drop-down list</li>
+<li><strong>Customization Area:</strong> Here, each shape will display it's customizable options</li>
+<li><strong>Build Shape:</strong> Click to &quot;commit&quot; the shape and spawn it into the Scene</li>
+</ul>
+<p><strong>Available Shapes and Options</strong></p>
+<ul>
+<li>
+Cube
+<ul>
+<li>Dimensions (X, Y, Z)</li>
+</ul>
+</li>
+<li>
+Stair
+<ul>
+<li>Number of Steps</li>
+<li>Width</li>
+<li>Height</li>
+<li>Depth</li>
+<li>Platforms Only</li>
+<li>Extend Sides to Floor</li>
+<li>Generate Back</li>
+</ul>
+</li>
+<li>
+Prism
+<ul>
+<li>Dimensions (X, Y, Z)</li>
+</ul>
+</li>
+<li>
+Cylinder
+<ul>
+<li>Radius</li>
+<li>Number of Sides</li>
+<li>Height</li>
+<li>Height Segments</li>
+</ul>
+</li>
+<li>
+Plane
+<ul>
+<li>Initial Orientation</li>
+<li>Width</li>
+<li>Length</li>
+<li>Width Segments</li>
+<li>Length Segments</li>
+</ul>
+</li>
+<li>
+Door
+<ul>
+<li>Total Width</li>
+<li>Total Height</li>
+<li>Total Depth</li>
+<li>Ledge Height</li>
+<li>Leg Width</li>
+</ul>
+</li>
+<li>
+Pipe
+<ul>
+<li>Radius</li>
+<li>Height</li>
+<li>Thickness</li>
+<li>Number of Sides</li>
+<li>Height Segments</li>
+</ul>
+</li>
+<li>
+Cone
+<ul>
+<li>Radius</li>
+<li>Height</li>
+<li>Number of Sides</li>
+</ul>
+</li>
+<li>
+Sprite
+<ul>
+<li>Initial Orientation</li>
+</ul>
+</li>
+<li>
+Arch
+<ul>
+<li>Radius</li>
+<li>Thickness</li>
+<li>Depth</li>
+<li>Number of Sides</li>
+<li>Arch Degrees</li>
+<li>Inner Faces</li>
+<li>Outer Faces</li>
+<li>Front Faces</li>
+<li>Rear Faces</li>
+</ul>
+</li>
+<li>
+Custom
+<ul>
+<li>Allows you to set exact vertices yourself- only for the brave, or mathematically inclined!</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2>Modes &amp; Elements</h2>
+<p>As mentioned in the Fundamentals and Interface Overview sections, ProBuilder uses a &quot;Mode&quot; system to keep your Unity workflow clean and speedy. Let's go over those modes again, it a bit more detail.</p>
+<p><strong>Object</strong> and <strong>Element</strong> are the two &quot;major&quot; modes.  These are designed so you can quickly swap between each, and seamlessly work on both ProBuilder and non-ProBuilder parts of your game.</p>
+<p><strong>Object</strong> mode is essentially standard Unity workflow, where ProBuilder Objects act like normal static meshes. There are some special actions available though, which we will look at later.</p>
+<p>How to Use: Click on the &quot;Object&quot; button in the Mode Indicator to exit to Object mode. Or, hit <code>&quot;Escape&quot;</code> on the keyboard.</p>
+<p><strong>Element</strong> mode is the real power of ProBuilder- in this mode, you can see and edit the Vertices, Edges, and Faces of ProBuilder Objects, similar to 3D Modeling in tools like 3DS Max, Maya, Blender, etc.</p>
+<p>How to Use: Click on any of the Element Mode buttons at the top of the GUI to instantly enter that Element Mode (Vertex, Edge, or Face). Or, hit <code>&quot;G&quot;</code> on the keyboard. Once in an Element Mode, you can also hit <code>&quot;H&quot;</code> on the keyboard to swap between <strong>Element Modes</strong>.</p>
+<blockquote>
+<p>Nothing showing up? Vertex and Edge visuals will only show on the ProBuilder Object(s) currently selected, otherwise the screen would get WAY too busy!</p>
+</blockquote>
+<ul>
+<li>
+<strong>Vertex</strong>
+<ul>
+<li>Gives you even fine control, right down to the individual vertices.  Selected ProBuilder objects will show their vertices as blue dots, and selected vertices will be shown with green.</li>
+</ul>
+</li>
+<li>
+<strong>Edge</strong>
+<ul>
+<li>ProBuilder will highlight the nearest edge to your mouse with a red color, while all selectable edges will be rendered blue.  The current selection is shown in green.   
+</li>
+<li>Editing via edges provides access to some of the more advanced geometry editing features, like Insert Edge Loop and Bridge Edges.</li>
+</ul>
+</li>
+<li>
+<strong>Face</strong>
+<ul>
+<li>Allows you to select and manipulate the faces of ProBuilder Objects- selected faces are shown with a light-blue highlight (...you can Customize that!).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Selecting and Manipulating Elements</strong></p>
+<blockquote>
+<p>Note: An &quot;Element&quot; refers to a Vertex, Edge, or Face. 3DS Max users, think &quot;Sub-Object&quot; ;)</p>
+</blockquote>
+<p>Selecting and manipulating Elements in ProBuilder works just like anything else in Unity- nothing new to learn here! You can:</p>
+<ul>
+<li>Click to select just one</li>
+<li>Drag to select many</li>
+<li>Hold Shift when click or drag-selecting to modify the selection</li>
+</ul>
+<p>ProBuilder also add two special selection methods for Elements:</p>
+<ul>
+<li>In Edge or Vertex Mode, click on a face to select all the Edges/Verts on that face</li>
+<li>Double-Click on an object's face to select all Elements (of the current mode) on that object</li>
+</ul>
+<p><strong>Geometry Actions</strong></p>
+<p>In the following paragraphs, we will cover each of the Geometry Actions available in ProBuilder, moving top-to-bottom on main GUI Panel.</p>
+<h2>Geometry Actions: All Modes</h2>
+<p>The following actions are available in <strong>all</strong> Modes:</p>
+<ul>
+<li>
+<strong>Flip Normals</strong>
+<ul>
+<li>In <strong>Object</strong> Mode, this will flip ALL faces on the selected ProBuilder object(s). </li>
+<li>In <strong>Element</strong> Mode, this button will flip only the selected face(s).</li>
+<li>Very useful for turning &quot;solid&quot; shapes, into &quot;hollow&quot; ones!</li>
+</ul>
+</li>
+<li>
+<strong>Subdivide</strong>
+<ul>
+<li>In <strong>Object</strong> Mode, this will subdivide (4x) ALL faces on the selected ProBuilder object(s). </li>
+<li>In <strong>Element</strong> Mode, this button will subdivide only the selected face(s).</li>
+<li>Works well to quickly add more poly detail, especially for animation and vertex coloring</li>
+</ul>
+</li>
+<li>
+<strong>Set Pivot</strong>
+<ul>
+<li>In <strong>Object</strong> mode, this will center the pivot of the selected object(s).</li>
+<li>In <strong>Element</strong> mode, this will move the object's pivot to the center of of the selected Elements.</li>
+<li>Great for setting an object to rotate or scale from an exact vertex point!</li>
+</ul>
+</li>
+</ul>
+<h2>Geometry Actions: Object Mode Only</h2>
+<p>The following actions are only available in <strong>Object</strong> mode:</p>
+<ul>
+<li>
+<strong>Merge</strong> 
+<ul>
+<li>Click this button to merge all selected ProBuilder objects into one single ProBuilder Object, with the option to save or delete the originals.</li>
+<li>If you choose to save the originals, they will simply be deactivated in the scene- their names will appear greyed-out in the hierarchy list.</li>
+<li>Merging objects is a great way to make your game run more efficiently, since it combines meshes and therefore lowers draw calls- very important for mobile games!</li>
+</ul>
+</li>
+<li>
+<strong>Mirror</strong>
+<ul>
+<li>Click this button to open the Mirror Tool. From there, select which axis to mirror on, and click “Mirror” to mirror the selected ProBuilder object (as a duplicate).</li>
+</ul>
+</li>
+</ul>
+<h2>Geometry Actions: All Element Modes</h2>
+<p>The following actions are only available in <strong>Element</strong> mode, but can be used with <strong>all</strong> Elements:</p>
+<ul>
+<li>
+<p><strong>Handle Coordinates</strong>: This drop-down list controls the coordinate space currently being used for editing geometry.</p>
+<ul>
+<li>Planar: movement in the direction the selected face’s normal</li>
+<li>Global: Movement in the “Global” or “World” XYZ directions</li>
+<li>Local: Movement relative to the object’s transform orientation</li>
+</ul>
+<p><img src="coordinate_example.png" alt="coordinates" /></p>
+<blockquote>
+<p>Not making sense? This can be a confusing subject the first time you encounter it. Stick with “Global”, and give each of the others a try from time to time- they will make better sense with practice, than I could ever explain. You will soon find these are incredibly handy for complex construction. Hit the “P” key on your keyboard to swap between Coordinate Space modes.</p>
+</blockquote>
+</li>
+<li>
+<strong>Grow</strong>
+<ul>
+<li>Clicking <strong>Grow</strong> will &quot;spread&quot; the selection outwards, taking all Elements adjacent to the currently selected Element, and adding them to the selection. </li>
+</ul>
+</li>
+<li>
+<strong>Grow By Angle</strong>
+<ul>
+<li>Click the &quot;+&quot; button to toggle open the options for <strong>Grow</strong></li>
+<li>Use the checkbox to toggle On/Off <strong>Grow By Angle</strong></li>
+<li>Type in the desired Grow Angle (degrees)</li>
+<li>When active, the <strong>Grow</strong> action will only spread the selection to adjacent Elements whose normal direction is less than than the amount entered (degrees)</li>
+</ul>
+</li>
+<li>
+<strong>Shrink</strong>
+<ul>
+<li>Performs the exact opposite of <strong>Grow</strong>, by removing the outermost Elements in the selection</li>
+</ul>
+</li>
+<li>
+<strong>Invert</strong>
+<ul>
+<li>Selects the inverse of the current selection- that is, all Elements currently deselected will become selected, and all Elements currently selected will become selected</li>
+</ul>
+</li>
+<li>
+<strong>Extrude</strong>
+<ul>
+<li>Click to extrude the currently selected Face(s) (regardless of <strong>Element</strong> mode!), by zero units. You can then Move, Rotate, or Scale the newly extruded Faces, as desired.</li>
+</ul>
+<blockquote>
+<p>ProTip: It is often much easier to simply hold <code>&quot;Shift&quot;</code> while using the Move, Rotate, or Scale tool- this will automaticaly extrude the selected Face(s)!</p>
+</blockquote>
+</li>
+<li>
+<strong>Extrude by Exact Amount</strong>
+<ul>
+<li>Click the &quot;+&quot; button to toggle open the options for <strong>Extrude</strong></li>
+<li>Use the checkbox to toggle On/Off <strong>Extrude By Exact Amount</strong></li>
+<li>Type in the desired Extrude Amount (meters)</li>
+<li>When active, the <strong>Extrude</strong> action will instantly extrude the selected Face(s) by the entered amount (meters)</li>
+</ul>
+</li>
+<li>
+<strong>Delete</strong>
+<ul>
+<li>Deletes the selected Face(s) (regardless of <strong>Element</strong> mode!)</li>
+<li>You can also use the <code>&quot;Backspace&quot;</code> key</li>
+</ul>
+<blockquote>
+<p>ProTip: <strong>Don't</strong> accidentally press <code>&quot;Delete&quot;</code>, that will delete the entire object!</p>
+</blockquote>
+</li>
+<li>
+<strong>Detach</strong>
+<ul>
+<li>This will break free all selected Face(s) (regardless of <strong>Element</strong> mode), so that they can be moved about separately</li>
+<li>
+When you click <strong>Detach</strong>, you will be given two options:
+<ul>
+<li>Detach to New Object: The detached faces will be removed from the current object, and create a brand new object</li>
+<li>Detach to Submesh: The detached faces will be broken from the current object, but remain part of it's mesh</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Edit Mode: Vertex Only</h2>
+<p>The following actions are only available in the <strong>Vertex Element Mode:</strong></p>
+<ul>
+<li>
+<strong>Connect</strong>
+<ul>
+<li>This will create edges connecting all selected Vertices, where possible</li>
+</ul>
+</li>
+<li>
+<strong>Weld</strong>
+<ul>
+<li>Select 2 or more Vertices that are in the exact same position, and click <strong>Weld</strong> to make them one single Vertex</li>
+</ul>
+</li>
+<li>
+<strong>Weld by Distance</strong>
+<ul>
+<li>Click the &quot;+&quot; button to toggle open the options for <strong>Weld</strong></li>
+<li>Use the checkbox to toggle On/Off <strong>Weld By Distance</strong></li>
+<li>Type in the desired Weld Distance (meters)</li>
+<li>When active, the <strong>Weld</strong> action will affect not only Vertices in the exact same location, but also all those within the specified distance (meters)</li>
+</ul>
+</li>
+<li>
+<strong>Collapse</strong>
+<ul>
+<li>Danger Zone! This will find the center position between all selected Vertices, and collapse them to a single Vertex, at that position, <strong>regardless of distance.</strong></li>
+</ul>
+</li>
+<li>
+<strong>Split</strong>
+<ul>
+<li>This will cause all selected Vertices to split apart, creating a unique Vertex for each edge that connected to the original Vertex.</li>
+</ul>
+</li>
+</ul>
+<h2>Edit Mode: Edge Only</h2>
+<ul>
+<li>
+<strong>Loop</strong>
+<ul>
+<li>Loops selection from the currently selected Edge(s)</li>
+</ul>
+</li>
+<li>
+<strong>Ring</strong>
+<ul>
+<li>Rings selection from the currently selected Edge(s)</li>
+</ul>
+</li>
+<li>
+<strong>Bridge</strong>
+<ul>
+<li>Select 2 open Edges, then click <strong>Bridge</strong> to create a new Face which spans the distance between the 2 Edges.</li>
+<li>Most useful for filling holes in geometry </li>
+</ul>
+</li>
+<li>
+<strong>Connect</strong>
+<ul>
+<li>Connects all selected Edges with new Edges</li>
+<li>Extremely useful for adding</li>
+</ul>
+</li>
+</ul>
+<h2>Tips for Better Building</h2>
+<p>Here, we’ll go over some basic tips, tricks, and advice for modeling with ProBuilder 2.0:</p>
+<ul>
+<li>
+<p><strong>Use ProGrids!</strong> If you are not using ProGrids yet, please do! With ProBuilder, you will most often be constructing hard-surface models, with many parts that need to align exactly, match sizes, and so forth. ProGrids will save you hours of time and sanity, and your resulting creation will look and function better as well.</p>
+</li>
+<li>
+<p><strong>Stay “On The Grid”.</strong> Now that you are using ProGrids, stay on that grid! Making sure all your vertices are on an exact grid point will make your ProBuilder objects much, much simpler to align, edit, and modify.</p>
+</li>
+<li>
+<p><strong>Start Big.</strong> The first version you build won’t always be wrong, but it won’t ever be right, either. So, start with with large, simple, boxy construction- I typically start at a grid level of 1/2 meter (.5) If you are building a level or world, test out the flow, fit, and scale. Try some lighting and atmosphere tests, really get a feel for what you are constructing. Then whittle down to smaller and smaller grid levels, adding more detail with each level, just like LODs.</p>
+</li>
+<li>
+<p><strong>Use Simple Angles.</strong> When creating angles, try to stick with exactly 1x1, 1x2, and 1x3, etc. For example, “1 unit up, 1 unit over”. This will keep your design clean, and help match up complex geometry. </p>
+</li>
+<li>
+<p><strong>Textures Come Last.</strong> Greybox that level completely, before you even think about adding real textures! Use the Colorizing tool to differentiate your level/world/item as needed, but save the real texturing for the very last. Only once the geometry is 95% finished and final, you should begin adding real textures, else you risk wasting many hours of work when that geometry suddenly needs to be changed...</p>
+</li>
+<li>
+<p><strong>Delete Unseen Faces.</strong> Fewer triangles to render, and your lightmaps will take MUCH less time to bake! </p>
+</li>
+<li>
+<p><strong>Assign “World” Geometry.</strong> Only ProBuilder objects that are given the “World” entity type will occlude other objects. This isn’t the default type, so you have to assign it manually. See the &quot;<a href="#entityTypes">Entity Types</a>&quot; section for more details.</p>
+</li>
+</ul>
+<hr />
+<p><a name="texturesAndUVs"></a></p>
+<h1>Texturing and UVs</h1>
+<h2>Applying Materials</h2>
+<p>You can apply materials to your ProBuilder Objects using simple &quot;drag-n-drop&quot;, by using the (new for v2.3) Material Palette, or via the QuickPaint method. Try them each, and find which works best for you!</p>
+<blockquote>
+<p><a href="http://www.youtube.com/watch?v=m085rEQmVP8">Video Tutorial: http://www.youtube.com/watch?v=m085rEQmVP8</a></p>
+</blockquote>
+<h3>Drag-n-Drop</h3>
+<p>For this method, simply drag a material onto any ProBuilder Object, just like a normal Unity Object. However, the result will differ by Edit Mode:</p>
+<ul>
+<li><strong>Object</strong> mode: Will apply the material to the entire ProBuilder Object</li>
+<li><strong>Element</strong> mode: Will apply the material only to the selected Face(s)</li>
+</ul>
+<h3>Material Palette</h3>
+<p><img src="ProBuilderDocs_MaterialPalette.png" alt="The default UV Editor window." /></p>
+<p>The Material Palette, new in v2.3, allows you to setup an easy-access palette of often used materials, and apply them instantly via a GUI button, or keyboard shortcuts (Alt + 0-9). You can also add and delete custom material slots should you need more than 10. Similar to using &quot;drag-n-drop&quot;, applying a material via the Material Palette will have different results depending on Edit Mode:</p>
+<ul>
+<li><strong>Object</strong> mode: Will apply the material to the entire ProBuilder Object</li>
+<li><strong>Element</strong> mode: Will apply the material only to the selected Face(s)</li>
+</ul>
+<h3>QuickPaint</h3>
+<p>&quot;QuickPaint&quot; is a method used via the GUI at the very top of the Material Palette window. Choose a material for the QuickPaint feature, then just use CTRL-SHIFT-LeftClick to instantly paint that material to any face you click on. </p>
+<ul>
+<li>This method will <strong>always</strong> paint to a single face only, regardless of Edit Mode or selection.</li>
+</ul>
+<h2>UV Editor Window Introduction</h2>
+<blockquote>
+<p>Video Tutorial: <a href="http://www.youtube.com/watch?v=U_5f8RlciWQ">http://www.youtube.com/watch?v=U_5f8RlciWQ</a></p>
+</blockquote>
+<p>ProBuilder 2.3 nearly entirely overhauls the previous UV system.  Don't worry, UVs can still be automatically generated (and are by default).  The familiar controls and handles are all still here.</p>
+<p>The most obvious change is that UVs are now edited in a fancy new window, which shows you exactly where your UVs are in 2D space.  You can position, rotate, and scale your UVs in this window, or you can lock the <code>Texture Handle</code> and manipulate UVs in the SceneView.</p>
+<h3>Auto and Manual Modes</h3>
+<p>The next biggest change is the addition of a new <code>Manual Mode</code> for UVs.  Faces are by default unwrapped using <code>Auto Mode</code>, which means that you control a set of parameters that are used to project UV coordinates for you.  If you've used ProBuilder prior to 2.3, this will feel very familiar.  <code>Manual Mode</code> on the other hand behaves more like traditional 3D modeling apps - you have precise control over how UVs are projected, and once you've set them they will not move.  
+</p>
+<p>Faces that are in <code>Manual Mode</code> will be highlighted in Orange, while <code>Auto Mode</code> UVs will be highlighted Blue.</p>
+<blockquote>
+<p><code>Auto Mode</code> UVs are only applicable to face selections - if you wish to modify UVs per-edge or per-vertex, <code>Manual Mode</code> must be used.  ProBuilder will automatically handle switching from <code>Auto</code> to <code>Manual</code> mode for you if you modify a non-face element while editing an <code>Auto</code> face.</p>
+<p>You may switch between <code>Manual</code> and <code>Auto</code> at any time, but be aware that when swapping from <code>Manual</code> to <code>Auto</code> you may lose some features of your work (since <code>Auto</code> mode cannot manipulate vertices independent of their faces).</p>
+</blockquote>
+<h2>The UV Editor Window</h2>
+<p>The UV Editor window contains two guide lines, on the <code>X</code> and <code>Y</code> axis ranging from <code>0,0</code> to <code>1,1</code>.  These lines serve to provide a point of origin.</p>
+<p><img src="UVWindowBlank.png" alt="The default UV Editor window." /></p>
+<table>
+	<tr>
+		<td></td>
+		<td><b>Name</b></td>
+		<td><b>Description</b></td>
+	</tr>
+
+	<tr>
+		<td>0</td>
+		<td>Tool selection</td>
+		<td>Sets the current tool - <code>{Pan, Move, Rotate, Scale}</code></td>
+	</tr>
+
+	<tr>
+		<td>1</td>
+		<td>Element mode</td>
+		<td>Changes the element selection mode - <code>{Vertex, Edge, Face}</code></td>
+	</tr>
+
+	<tr>
+		<td>2</td>
+		<td>Texture Lock</td>
+		<td>Sets the <code>SceneView</code> tools to be used for UV modifications.  This takes the place of <code>Texture Mode</code>.</td>
+	</tr>
+
+	<tr>
+		<td>3</td>
+		<td>Show Material Preview</td>
+		<td>When toggled, a preview of the first selected face's material texture will be shown.  Note that this features requires the material's shader to contain a <code>_mainTexture</code> property.</td>
+	</tr>
+
+	<tr>
+		<td>4</td>
+		<td>Actions Window</td>
+		<td>This window will update based on your selection.  It displays the relevant tools and actions for each mode per-selected face.</td>
+	</tr>
+
+	<tr>
+		<td>5</td>
+		<td>Canvas</td>
+		<td>The blue guides represent coordinates <code>(0,0) -> (1,1)</code>.  Your UVs may be placed anywhere on this canvas.</td>
+	</tr>
+</table>
+<h2>Action Window</h2>
+<p>There are two interfaces that can be displayed in the <code>Action Window</code>: <code>Manual Mode</code> and <code>Auto Mode</code>.  Both modes provide similar functionality, with important differences in how they are executed.</p>
+<blockquote>
+<p>Note that if you modify a single vertex, edge, or any non-face element while in <code>Auto Mode</code>, the face containing those elements will automatically be converted to <code>Manual</code> for you.</p>
+</blockquote>
+<h3>Auto Mode Interface</h3>
+<p><img src="ActionWindowAuto.png" /></p>
+<table>
+	<tr>
+		<td></td>
+		<td>Description</td>
+	</tr>
+
+	<tr>
+		<td>0</td>
+		<td>Convert the current face selection to `Manual Mode` UVs.  This will clear all current `Auto Mode` settings for this face, but you will not lose UV positions.</td>
+	</tr>
+
+	<tr>
+		<td>1</td>
+		<td><code>Fill Mode</code> determines how UVs behave once they're projected.  <code>Tile</code> is usually the correct behavior, but in some cases you may wish to fit your UVs into <code>(0,0)-(1,1)</code> space. <code>Fit</code> uniformly scales UVs to size, where <code>Stretch</code> simply expands the selection on all sides to fill space.</td>
+	</tr>
+
+	<tr>
+		<td>2</td>
+		<td><code>Offset, Rotation, and Scale</code> are applied after UVs are projected.  You may use the UV <code>Handle</code> tool or these fields to set values.</td>
+	</tr>
+
+	<tr>
+		<td>3</td>
+		<td><code>Special</code> toggles enable very specific changes to how UVs are calculated.  Specifically, they allow you to flip coordinates on the <code>X` and</code><code>Y</code> axis (using <code>Flip {U, V}</code>) or invert them (<code>Swap U/V</code>).</td>
+	</tr>
+
+	<tr>
+		<td>4</td>
+		<td><code>World Space</code> tells ProBuilder to skip the normalization step following a projection event - UVs will be left where-ever the initial projection places them.</td>
+	</tr>
+
+	<tr>
+		<td>5</td>
+		<td><code>Texture Groups</code> provide high level access to the projection process.  Setting faces to share a texture group will guarantee that those faces will be projected as a single plane, sharing the same parameters.  This is most often useful for faces that have a similar orientation, and share an edge.</td>
+	</tr>
+</table>
+<h3>Manual Mode Interface</h3>
+<p><img src="ActionWindowManual.png" /></p>
+<table>
+	<tr>
+		<td></td>
+		<td> Description </td>
+	</tr>
+
+	<tr>
+		<td>0</td>
+		<td>Convert the current face selection to <code>Auto Mode</code> UVs.</td>
+	</tr>
+
+	<tr>
+		<td>1</td>
+		<td><code>Project UVs</code> provides methods of projecting vertices to UV space.  This is the first step in unwrapping a model.  See below for an explanation of both.</td>
+	</tr>
+
+	<tr>
+		<td>2</td>
+		<td><code>Fill Mode</code> provides actions for setting UVs to certain spaces.  Currently <code>Fit UVs</code> is the only option, which automatically (and uniformly) scales all selected UVs to fit in <code>(0,0)-(1,1)</code> coordinate space.</td>
+	</tr>
+
+	<tr>
+		<td>3</td>
+		<td><code>Selection</code> provides actions for expanding the current element selection.  A UV <code>Island</code> is any set of faces or elements connected by the <code>Sew</code> or <code>AutoStitch</code> functions.</td>
+	</tr>
+
+	<tr>
+		<td>4</td>
+		<td><code>Edit</code> allows you to connect / disconnect UV elements.  <code>Sew</code> is similar to a geometry <code>Weld</code>.</td>
+	</tr>
+
+	<tr>
+		<td>5</td>
+		<td><code>Flip {Horizontal, Vertical}</code> flips UVs across the <code>X</code> or <code>Y</code> axis.</td>
+	</tr>
+</table>
+<h4>Projection</h4>
+<ul>
+<li><code>Planar</code> - This projects UVs by treating all faces as a single plane, then mapping their vertices to 2d space.</li>
+<li><code>Box</code> - Project UVs from the best matching <code>normal</code> on a surrounding box.  This is great for quickly unwrapping an object with generally acceptable defaults.</li>
+</ul>
+<h2>Additional Features</h2>
+<h3>Autostitch</h3>
+<p><code>Autostitch</code> is an action that will perfectly align 2 faces at their shared edge.  To perform an <code>Autostitch</code>, simply select a face (one face only), then <code>Control+Click</code> a neighboring face. </p>
+<p>On success, the <code>SceneView</code> will display a notification and the current selection will be set to the clicked face.  You may continue <code>Control + Clicking</code>-ing neighboring faces.</p>
+<blockquote>
+<p>The UV Editor window must be open to perform an <code>Autostitch</code> action.</p>
+<p>To successfully <code>Autostitch</code> two faces, they must share an <code>Edge</code>.</p>
+</blockquote>
+<h3>Set UV Pivot</h3>
+<p>When using the UV Editor's <code>Handles</code>, it may be useful to set a different pivot point than the center of the selection.  To do this, simply <code>Right Click</code> and drag the <code>Move Handle</code> to the desired pivot.  Once you have placed the pivot, you may switch freely between <code>Move</code>, <code>Rotate</code>, and <code>Scale</code> tools without losing your pivot.</p>
+<blockquote>
+<p><strong>Mac Users</strong> - Use <code>Alt + Drag</code> instead of <code>Right Click + Drag</code> to set custom pivot points.</p>
+</blockquote>
+<p><img src="SetPivot.png" /></p>
+<p>To reset your handle pivot back to the center of a selection simply click a new element (or the current selection).  
+</p>
+<h3>UV Snapping</h3>
+<p>When dragging UVs, you may notice that your selection snaps to the nearest vertex.  This makes aligning faces very quick, but can be undesirable in some situations.  To disable proximity snapping, simply hold the <code>Shift</code> key while dragging.</p>
+<hr />
+<p><a name="colorizing"></a></p>
+<h1>Vertex Colors (&quot;Colorizing&quot;)</h1>
+<blockquote>
+<p>Video Tutorial: <a href="http://www.youtube.com/watch?v=m085rEQmVP8">http://www.youtube.com/watch?v=m085rEQmVP8</a></p>
+</blockquote>
+<p>&quot;Colorizing&quot; allows you to color individual faces when using a material that supports Vertex Colors. With this method, you can quickly add color and variation throughout your map, without changing materials or adding drawcalls.</p>
+<p><strong>The Vertex Color Panel</strong><br />
+<img src="vertex-colors_example.png" alt="colorize" /></p>
+<ul>
+<li>
+<p>You can open the Vertex Color Panel from the main GUI panel with the  button, or choose “Tools &gt; [name of package] &gt; Vertex Colors &gt; Vertex Color Interface” from the top menu.</p>
+</li>
+<li>
+<p>Customizing Vertex Colors</p>
+<ul>
+<li>Each of the 10 color choices are customizable by clicking on the smaller “color picker” button below the larger “Apply Color” button. Your customizations will be remembered between Unity sessions. Click the “Reset” button to revert to default colors. </li>
+</ul>
+</li>
+<li>
+<p>Applying Vertex Colors</p>
+<ul>
+<li>Enter Geometry Editing Mode (“G” on your keyboard), then select any number of faces.</li>
+<li>Apply the vertex color via to the faces by either of 2 methods:</li>
+<li>Open the Vertex Color Panel, then click the desired color button</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>ProTip:</strong> Keep one of the colors at simple white, so you can quickly revert faces to standard vertex color.</p>
+</blockquote>
+<hr />
+<p><a name="entityTypes"></a></p>
+<h1>Entity Types</h1>
+<p>All ProBuilder objects have an &quot;Entity Type&quot;. These are basically categories, like “Melee, Ranged, Explosive, etc”- they set certain properties in the object, and how it acts in your game.</p>
+<p>Since all ProBuilder objects have a type, and you generally don’t need to see all types at once, you can use the Entity Types buttons to toggle the visibility on or off for each “group” of types. This becomes extremely useful as your scenes become more and more detailed/complex.</p>
+<ul>
+<li>
+<p><strong>Mover</strong> is the same as a Detail object, except it is non-static, for use as moving platforms, doors, elevators, etc. It can be occluded, but will not occlude other objects. This is set as default, since too many occluders will actually hurt performance much more than too few. Set any ProBuilder object(s) to “Mover” type by selecting them, and hitting the “M” key on your keyboard.</p>
+</li>
+<li>
+<p><strong>Detail</strong> is the standard, default ProBuilder Object type. A mesh with a texture and a collider, nothing more. It can be occluded, but will not occlude other objects. This is set as default, since too many occluders will actually hurt performance much more than too few. Set any ProBuilder object(s) to “Detail” type by selecting them, and hitting the “D” key on your keyboard. </p>
+</li>
+<li>
+<p><strong>World</strong> type objects (ProBuilder only) are same as Detail, except they do occlude other objects. If you have large, simple objects, ones that you know will block larger portions of your level from view, they should probably be set as “World” type. Set any ProBuilder object(s) to “World” type by selecting them, and hitting the “O” key on your keyboard.</p>
+</li>
+<li>
+<p><strong>Collision</strong> objects are invisible in-game, but still have full collision. These are very handy for smoothing stairways into ramps, adding player clip to round out sharp corners, force fields, and many other semi-advanced uses. They will show in the editor as bright-green and semi transparent. Naturally, they do not occlude or block light. However, you should always disable them via the Entity Types controls before lightmapping, or their color will affect nearby areas. Set any ProBuilder object(s) to “Collision” type by selecting them, and hitting the “C” key on your keyboard.</p>
+</li>
+<li>
+<p><strong>Triggers</strong> are a special type of ProBuilder object, designed specifically to aid in the creation of Zones, Volumes, and (of course) Triggers. They are invisible in game, but have a collision component set to “trigger”. This makes them great for things like triggering elevators, doors, or cutscenes (as the player enters or exits the Trigger zone), designating “Kill Zones” or FX Volumes, and so forth. Set any ProBuilder object(s) to “Trigger” type by selecting them, and hitting the “T” key on your keyboard.</p>
+</li>
+</ul>
+<hr />
+<p><a name="optimization"></a></p>
+<h1>Optimization</h1>
+<ul>
+<li>
+<p><strong>Deleting Faces</strong> is generally done once your mesh is complete, or near complete. Any face that will never be seen or &quot;used&quot; in the game should be deleted. Otherwise, it would add to the total polygon count, take up lightmap texture space, and potentially add drawcalls.</p>
+<ul>
+<li><strong>Note:</strong> If you delete a face, but need it back later, use the new &quot;<strong>Bridge</strong>&quot; function! </li>
+</ul>
+</li>
+<li>
+<p><strong>Occlusion</strong> is extremely important for good optimization. Wherever you have large, visibility-blocking ProBuilder objects, assign them the “World” Entity Type. This will let them take advantage of Unity’s Occlusion system, by becoming Occluders. </p>
+<ul>
+<li>
+<p><strong>Note:</strong> Occlusion’s benefits are very much situational. Too much Occlusion can be worse than too little- the game needs to calculate what can and can’t be seen, and if you have a very complex Occlusion setup, it can easily crush your framerate. On the other hand, if you have a room with lots of high-poly objects inside, even a complex Occluder might be worthwhile. Further, if you use purely static Occlusion data, then you can use quite a few more Occluders without hurting performance, and vice versa if using a more dynamic Occlusion method.</p>
+</li>
+<li>
+<p>Occlusion can be tricky at first, but will yield serious performance benefits, so don’t overlook it. Experiment with this one, and read up on Unity’s Occlusion system for the best results.</p>
+</li>
+<li><strong>See also</strong> - <a href="http://docs.unity3d.com/Documentation/Manual/OcclusionCulling.html">http://docs.unity3d.com/Documentation/Manual/OcclusionCulling.html</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Merging</strong> allows you to collapse multiple ProBuilder objects into one single object, while still being able to edit it like any other ProBuilder object. This is mainly useful for reducing draw calls, and welding vertices. See “<strong>Merging</strong>” in the “<a href="#interfaceOverview">Interface Overview</a>” section for details on using this function.</p>
+</li>
+<li>
+<p><strong>Custom Collision</strong> should be used wherever possible, as it can significantly reduce in-game overhead and pre-game loading times. Essentially, anywhere that you can reduce a complex collider, or a group of colliders, down to a single, simple collider, you should use Custom Collision. </p>
+<ul>
+<li>A good example of this is a stairway- if you left it’s collision default, each and every step is part of the collision, and it would also be non-convex. Instead, disable the stairway’s collision component, then create a ProBuilder Object that matches the stairways slope. Set this Object to the “Collision” Entity Type by pressing “C” on your keyboard, and give the stairway a test run- not only will your game run better, but you can now move smoothly up and down the stairway, without those annoying “bumping” and collision-snagging actions that happen far too often in sub-par games.</li>
+</ul>
+</li>
+<li>
+<p><strong>Lightmap Size</strong> is a special fix that involves using a separate script, so we left it for last. Essentially, all the visual optimizations in ProBuilder are geared toward reducing draw calls- this is mostly done by getting objects to “batch” in the renderer. In an ideal game, every single mesh that uses the same material will batch down to one single draw call. You could have thousands of items, and only one draw call- as long as they all batch properly.</p>
+<ul>
+<li>
+<p>Unfortunately, there are lots of things that break batching- scaling, as mentioned is one of those. Another, trickier one, is lightmap index.</p>
+</li>
+<li>
+<p>Lets say you have 10 objects, you lightmap your scene, and end up with 2 lightmaps at 1024x1024 each. All objects should batch down to one, but you get 2 draw calls- why? Because you have more than one lightmap, and therefore, technically more than one material. This can get really ugly in a real-world situation, where you have multiple materials, and once you lightmap, your objects are spread throughout the lightmaps, allowing only a few or none to actually batch.</p>
+</li>
+<li>
+<p>So, the solution is bigger lightmaps. And you can control that via this very handy script:
+http://forum.unity3d.com/threads/56435-light-map-max-at-1k-solved</p>
+</li>
+<li>
+<p>All credit for this “Optimization”, and many thanks, goes to the forum users in the above linked post. We hope to implement our own version of this laterI, but for now just use the above script to set your lightmap size to larger than 1k (1024).</p>
+</li>
+<li>
+<p>Each time after building your maps at larger than 1K size, you will also need to reset the lightmap texture’s import settings to “Max: 4K”, as well. </p>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p><a name="lightmapping"></a></p>
+<h1>Lightmapping</h1>
+<p>ProBuilder automatically generates perfectly sized, normalized, UV2 channels for each and every ProBuilder Object. Hurray! However, there are a few items to keep in mind when lightmapping:</p>
+<ul>
+<li>
+<p>Lightmap Size: As mentioned above, make sure you use the largest lightmap size possible. For mobile devices and web/flash, I wouldn’t go over 2K (2048x2048), but otherwise 4096 should be perfectly fine, if you need it.</p>
+</li>
+<li>
+<p>Delete Invisible Faces: Without this, your lightmaps will be about 2-3 times the size they should be- very bad for baking time and game performance.</p>
+</li>
+</ul>
+<p><strong>Lightmap Generation Settings</strong></p>
+<p>You can customize how ProBuilder generates lightmap UVs, both per-object and globally. To do so, choose <code>Tools &gt; ProBuilder &gt; Editor &gt; Lightmap Settings Window</code> from the Unity menu bar. </p>
+<p>Default values are preset for all objects, and should generally be appropriate.  However, if you are seeing artifacts or strange effects on your lightmaps for an object, you may try adjusting these parameters.</p>
+<hr />
+<p><a name="smoothingGroups"></a></p>
+<h1>Smoothing Groups</h1>
+<p>Smoothing groups average the vertex normals with neighboring planes.  This allows lighting to behave in a more realistic manner when dealing with edges that are intended to be smooth.</p>
+<p><img src="smoothing_example.png" alt="smoothing_example" /></p>
+<ul>
+<li>
+<p><strong>Opening the Smoothing Menu</strong>
+To open the smoothing menu, first open the Texture Window, either by pressing the ‘J’ key, or navigating to “Tools &gt; [name of package] &gt;Texture Window”. In the texture window, click the button titled “Smoothing.”</p>
+</li>
+<li>
+<p><strong>Using Smoothing Groups</strong>
+ProBuilder decides which edges should be smoothed by checking for neighboring faces that are in the same group.  It also checks for ‘Hard’ groups, which as you might guess, hardens edges of neighboring faces.</p>
+<p>As an example, selecting all side faces on a cylinder and setting them to the same smoothing group will result in smooth sides, while keeping the top and bottom edges hard. In some cases it may be desirable to have adjoining faces smoothed with certain neighbors, but not others.  In these cases, you may use multiple groups in order to achieve the desired result.  ProBuilder provides 24 smooth groups (all functionally the same, but only same number faces will smooth edges) and 18 hard groups.</p>
+</li>
+</ul>
+<hr />
+<p><a name="customizing"></a></p>
+<h1>Customizing ProBuilder</h1>
+<ul>
+<li>
+<p>To open the Customization Panel, click on “Edit &gt; Preferences”, in the Unity top menu, which will open the Editor Preferences window. Choose the “ProBuilder” (or “Prototype”) tab, and you will be presented with all customizable options.</p>
+</li>
+<li>
+<p>Edit as much as you like, and simply press “Use Defaults” if you would like to return to the standard configuration. We really hope everyone enjoys and uses this new feature, it should be very useful for those who want a specific keyboard layout, visuals, and workflow.</p>
+</li>
+</ul>
+<hr />
+<p><a name="menuItems"></a></p>
+<h1>Menu Items</h1>
+<p>A list of all Menu Items available:</p>
+<ul>
+<li>
+<strong>Geometry:</strong> Contains actions and tools related to manipulating geometry
+<ul>
+<li>Set Pivot: Sets the pivot of the selected object to the center of the current selection (face, vertex, or object)</li>
+<li>Mirror Tool: Duplicates the selected objects by mirroring in the selected direction.</li>
+<li>Extrude Face: Extrudes the selected face(s) along the vertex normals.</li>
+<li>Detach Face: Removes the selected face(s) from the object, allowing it to be moved separately from the main object.</li>
+<li>Flip Face / Object Normals: Reverses the vertex normals on each selected face or object.  Used to reverse culling for objects.</li>
+</ul>
+</li>
+<li>
+<strong>Actions:</strong> ProBuilder is built to be extremely extensible.  User built functions and assorted utilities for working with ProBuilder are stored in the <code>Actions</code> folder
+<ul>
+<li>Export Selected to OBJ: (Experimental) Exports selected objects to OBJ model format.</li>
+<li>Auto NoDraw Tool: (Experimental) A tool for automatically selecting hidden faces and applying NoDraw to them.</li>
+<li>ProBuilderize Selection: Converts any selected Model to a ProBuilder editable mesh.</li>
+<li>Strip ProBuilder Objects: Remove all ProBuilder scripts from selected objects, leaving just the model. If no objects are selected, ALL objects in the current scene will be affected.</li>
+</ul>
+</li>
+<li>
+<strong>Repair:</strong> This menu contains a set of tools to help fix broken ProBuilder scenes and objects.  Most users will not need these, but in some cases they may be necessary
+<ul>
+<li>Rebuild Shared Indices Cache: If you’re seeing a lot of NullRef errors in GenerateSubmeshes, try running this Repair.</li>
+<li>Force Refresh Objects: Sometimes necessary after an upgrade.</li>
+<li>Clean Up Leaked Meshes: If you see console logs saying anything about leaking meshes, run this command to clean up the leaks.</li>
+<li>Fix GameObject Flags: If you are having trouble with ProBuilder objects disappearing when building, try running this command.</li>
+</ul>
+</li>
+<li>
+<p><strong>Vertex Colors:</strong> If the shader your material is using supports vertex colors, this menu provides an interface to setting those colors.</p>
+</li>
+<li>
+<p><strong>Editor:</strong> These tools control how the editor acts in the Scene View.  These are all available as shortcuts in addition to menu items. (See &quot;<a href="#keyboardShortcuts">Keyboard Shortcuts</a>&quot;)</p>
+</li>
+</ul>
+<hr />
+<p><a name="hintsAndTips"></a></p>
+<h1>Hints &amp; Tips</h1>
+<ul>
+<li>Double clicking a face in Geometry mode selects all faces on that object.</li>
+<li><code>Ctrl-Shift-I</code> (thats ‘eye’) inverts the face selection.</li>
+<li>Select a face and hit <code>Ctrl-J</code>.  Your object’s pivot is now the center of that face.  This also works for vertices.</li>
+<li><code>Alt-G</code> adds all adjacent faces to the selection.</li>
+<li>You can drag select faces as well as vertices and edges.</li>
+<li>You may delete faces by hitting the ‘Backspace’ key.</li>
+<li>You can assign your own colors to the vertex coloring hotkeys by opening the ‘Vertex Color Interface’ in “Tools &gt; ProBuilder &gt; Vertex Colors &gt; Vertex Color Interface”</li>
+<li>Don’t want a dockable window?  Toggle “Open in Dockable Window” to false in the Preferences panel.</li>
+<li>
+Like to live dangerously?  Disable Edge Extrude from Perimeters Only and Bridge Perimeter Edges Only to enable extrusion and bridging from any edge, any time.  
+
+<ul>
+<li><strong>Note:</strong> This can easily lead to bizarre geometry - but hey, you can handle the power, right?</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p><a name="keyboardShortcuts"></a></p>
+<h1>Keyboard Shortcuts</h1>
+<p>ProBuilder 2 can be almost entirely keyboard-driven, which keeps the GUI clean, and workflow very fast. Even better, nearly every keyboard shortcut, and many other settings, can be customized! Just open &quot;Edit &gt; Preferences &gt; ProBuilder&quot; . Below is a “cheat sheet” of all default keyboard shortcuts. </p>
+<table>
+<thead>
+<tr>
+	<th>Shortcut</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>Ctrl - K</code></td>
+	<td>New Cube</td>
+</tr>
+<tr>
+	<td><code>Ctrl - Shift - K</code></td>
+	<td>New Shape</td>
+</tr>
+<tr>
+	<td><code>G</code></td>
+	<td>Enter Geometry Edit Mode</td>
+</tr>
+<tr>
+	<td><code>H</code></td>
+	<td>Toggle Between Face, Edge, and Vertex Manipulation</td>
+</tr>
+<tr>
+	<td><code>P</code></td>
+	<td>Toggle Handle Coordinate Alignment</td>
+</tr>
+<tr>
+	<td><code>J</code></td>
+	<td>Open Texture Edit Mode</td>
+</tr>
+<tr>
+	<td><code>N</code></td>
+	<td>Set Selected face(s) to NoDraw</td>
+</tr>
+<tr>
+	<td><code>Escape</code></td>
+	<td>Exit Texture or Geometry Mode</td>
+</tr>
+<tr>
+	<td><code>M</code></td>
+	<td>Set selected objects to Mover Entity Type</td>
+</tr>
+<tr>
+	<td><code>B</code></td>
+	<td>Set selected objects to Detail Entity Type</td>
+</tr>
+<tr>
+	<td><code>O</code></td>
+	<td>Set selected objects to World Entity Type</td>
+</tr>
+<tr>
+	<td><code>T</code></td>
+	<td>Set selected objects to Trigger Entity Type</td>
+</tr>
+<tr>
+	<td><code>C</code></td>
+	<td>Set selected objects to Collision Entity Type</td>
+</tr>
+<tr>
+	<td><code>Ctrl-Shift-Left Click</code></td>
+	<td>In Texture mode, paint selected material to clicked face</td>
+</tr>
+<tr>
+	<td><code>Ctrl-Shift-E</code></td>
+	<td>Extrude selected face(s)</td>
+</tr>
+<tr>
+	<td><code>Ctrl-E</code></td>
+	<td>Extrude selected face(s) with translation</td>
+</tr>
+<tr>
+	<td><code>Ctrl-J</code></td>
+	<td>Set pivot to center of selection (vertex, face, or object)</td>
+</tr>
+<tr>
+	<td><code>Ctrl-Shift-I</code></td>
+	<td>Invert selection</td>
+</tr>
+<tr>
+	<td><code>Alt-(0-9)</code></td>
+	<td>Paint selected face(s) to color preset (Vertex Colors Menu)</td>
+</tr>
+<tr>
+	<td><code>Shift (Drag/Rotate/Scale)</code></td>
+	<td>Hold shift while scaling, rotating, or moving to extrude selected faces.</td>
+</tr>
+<tr>
+	<td><code>Backspace</code></td>
+	<td>Delete selected face(s)</td>
+</tr>
+<tr>
+	<td><code>Alt + C</code></td>
+	<td>Collapse selected vertices</td>
+</tr>
+<tr>
+	<td><code>Alt + V</code></td>
+	<td>Weld selected vertices</td>
+</tr>
+<tr>
+	<td><code>Alt + X</code></td>
+	<td>Split selected vertices</td>
+</tr>
+<tr>
+	<td><code>Alt + B</code></td>
+	<td>Bridge selected edges</td>
+</tr>
+<tr>
+	<td><code>Alt + R</code></td>
+	<td>Select Edge Ring</td>
+</tr>
+<tr>
+	<td><code>Shift + Alt + G</code></td>
+	<td>Grow Selection</td>
+</tr>
+<tr>
+	<td><code>Shift + G</code></td>
+	<td>Grow Selection Plane</td>
+</tr>
+<tr>
+	<td><code>Alt + N</code></td>
+	<td>Flip Face Normals</td>
+</tr>
+<tr>
+	<td><code>Alt + U</code></td>
+	<td>Insert Edge Loop</td>
+</tr>
+<tr>
+	<td><code>Alt + E</code></td>
+	<td>Connect selected vertices or edges</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="featureIndex"></a></p>
+<h1>Feature Index and Comparison</h1>
+<p>We will endeavor to list each and every feature, action, and option available for ProBuilder in the section below. If we missed something, please let us know!</p>
+<p><strong>IMPORTANT: ProBuilder vs Prototype Comparison</strong></p>
+<ul>
+<li>Items marked with &quot;<strong><em>(ProBuilder Only)</em></strong>&quot; are only included with ProBuilder, and are NOT available in Prototype. </li>
+</ul>
+<h2>Panel GUI Items</h2>
+<p><em>These are features and actions available from the main ProBuilder GUI Panel</em></p>
+<p><strong>Edit Mode: Object</strong></p>
+<ul>
+<li>Edit Mode: Vertex</li>
+<li>Edit Mode: Edge</li>
+<li>Edit Mode: Face</li>
+<li>Shapes (&quot;Primitives&quot;)</li>
+<li>Material Palette <strong><em>(ProBuilder Only)</em></strong></li>
+<li>UV Editor <strong><em>(ProBuilder Only)</em></strong></li>
+<li>Vertex Color Palette</li>
+<li><a href="#smoothingGroups">Smoothing</a> <strong><em>(ProBuilder Only)</em></strong></li>
+<li>Merge <strong><em>(ProBuilder Only)</em></strong></li>
+<li>Mirror <strong><em>(ProBuilder Only)</em></strong></li>
+<li>Flip Normals <strong><em>(ProBuilder Only)</em></strong></li>
+<li>Subdivide <strong><em>(ProBuilder Only)</em></strong></li>
+<li>Set Pivot</li>
+<li>Entity Type: Detail</li>
+<li>Entity Type: Mover</li>
+<li>Entity Type: Collider</li>
+<li>Entity Type: Trigger</li>
+</ul>
+<p><strong>Edit Mode: All Element Modes</strong></p>
+<ul>
+<li>Handle Coordinates (World, Local, Planar)</li>
+<li>Grow Selection</li>
+<li>Grow Selection By Angle</li>
+<li>Shrink Selection</li>
+<li>Invert Selection</li>
+<li>Set Pivot</li>
+<li>Extrude</li>
+<li>Extrude by Exact Amount</li>
+<li>Flip Normals <strong><em>(ProBuilder Only)</em></strong></li>
+<li>Delete Selected Face(s) <strong><em>(ProBuilder Only)</em></strong></li>
+<li>Detach Selected Face(s) <strong><em>(ProBuilder Only)</em></strong></li>
+</ul>
+<p><strong>Edit Mode: Vertex Only</strong></p>
+<ul>
+<li>Connect Selected Vertices <strong><em>(ProBuilder Only)</em></strong></li>
+<li>Weld Selected Vertices <strong><em>(ProBuilder Only)</em></strong></li>
+<li>Weld Selected Vertices by Distance <strong><em>(ProBuilder Only)</em></strong></li>
+<li>Collapse Selected Vertices <strong><em>(ProBuilder Only)</em></strong></li>
+<li>Split Selected Vertices/Vertex <strong><em>(ProBuilder Only)</em></strong></li>
+</ul>
+<p><strong>Edit Mode: Edge Only</strong></p>
+<ul>
+<li>Select Edge Loop</li>
+<li>Select Edge Ring</li>
+<li>Bridge Selected Edges <strong><em>(ProBuilder Only)</em></strong></li>
+<li>Connect Selected Edges <strong><em>(ProBuilder Only)</em></strong></li>
+</ul>
+<p><strong>Edit Mode: Face Only</strong></p>
+<ul>
+<li>Subdivide Face(s) <strong><em>(ProBuilder Only)</em></strong></li>
+</ul>
+<h2>Menu-Only Items</h2>
+<p><em>These are features and actions only available via the Unity Menu Bar</em></p>
+<p><strong>Tools &gt; ProBuilder</strong></p>
+<ul>
+<li>About</li>
+</ul>
+<p><strong>Tools &gt; ProBuilder &gt; Editor</strong></p>
+<ul>
+<li>Toggle Edit Level</li>
+<li>Toggle Selection Mode</li>
+<li>Toggle Handle Pivot</li>
+<li>Lightmap Settings window</li>
+</ul>
+<p><strong>Tools &gt; ProBuilder &gt; Actions</strong></p>
+<ul>
+<li>ProBuilderize Selection <strong><em>(ProBuilder Only)</em></strong></li>
+<li>ProBuilderize Selection (Preserve Faces) <strong><em>(ProBuilder Only)</em></strong></li>
+<li>Strip ProBuilder Scripts in Selection <strong><em>(ProBuilder Only)</em></strong></li>
+<li>Strip All ProBuilder Scripts in Scene <strong><em>(ProBuilder Only)</em></strong></li>
+<li>Delete All NoDraw Faces <strong><em>(ProBuilder Only)</em></strong></li>
+<li>Export Selected to OBJ <strong><em>(ProBuilder Only)</em></strong></li>
+<li>Make Asset <strong><em>(ProBuilder Only)</em></strong></li>
+<li>Select Hidden Faces <strong><em>(ProBuilder Only)</em></strong></li>
+</ul>
+<p><strong>Tools &gt; ProBuilder &gt; Repair</strong></p>
+<ul>
+<li>Rebuild Shared Indices Cache</li>
+<li>Remove Degenerate Triangles</li>
+<li>Force &quot;Make Unique&quot; All Scene Objects</li>
+<li>Force Refresh Objects</li>
+<li>Fix GameObject Flags</li>
+<li>Fix &quot;Shader Wants Normals&quot; Warning</li>
+<li>Cleanup Leaked Meshes</li>
+<li>Validate Components</li>
+<li>Rebuild Element Caches</li>
+</ul>
+<p><strong>Tools &gt; ProBuilder &gt; Tools</strong></p>
+<ul>
+<li>Replace Faces with Material <strong><em>(ProBuilder Only)</em></strong></li>
+<li>Auto NoDraw Tool <strong><em>(ProBuilder Only)</em></strong></li>
+<li>Mirror Tool <strong><em>(ProBuilder Only)</em></strong></li>
+</ul>
+<hr />
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
