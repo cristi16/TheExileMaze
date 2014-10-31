@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 1f;
 
     private TextMesh log;
-    private float editorRotationSpeed = 60f;
+    private float editorRotationSpeed = 90f;
 
     private bool doneMoving = false;
     private bool doneShooting = false;
@@ -97,5 +97,6 @@ public class PlayerController : MonoBehaviour
     {
         GameObject instance = Instantiate(projectile, projectileSpawnPoint.position, Quaternion.identity) as GameObject;
         instance.GetComponent<Projectile>().StartMovement(transform.forward);
+        projectileSpawnPoint.audio.Play();
     }
 }
