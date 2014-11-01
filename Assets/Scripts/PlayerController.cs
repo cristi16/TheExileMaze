@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour
     public float speed = 1f;
     public float editorRotationSpeed = 120f;
     public float footstepsVolume = 1f;
-
+    [HideInInspector]
+    public bool ignoreInput = false;
     private TextMesh log;
 
     private bool doneMoving = false;
@@ -22,6 +23,8 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
+        if (ignoreInput) return;
+
     #if UNITY_EDITOR
             EditorUpdate();
     #else
