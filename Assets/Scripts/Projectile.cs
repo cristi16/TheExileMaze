@@ -14,7 +14,7 @@ public class Projectile : MonoBehaviour
     {
         while(moving)
         {
-            rigidbody.MovePosition(transform.position + direction * Time.deltaTime * speed);
+            rigidbody.MovePosition(transform.position + direction * Time.fixedDeltaTime * speed);
             lifetime += Time.deltaTime;
             if (lifetime > maxLifeTime)
                 GameObject.Destroy(gameObject);

@@ -28,21 +28,14 @@ public class WallCollision : MonoBehaviour
     {
        
         AudioSource.PlayClipAtPoint(wallHitSound, point);
-        yield return new WaitForSeconds(wallHitSound.length);
 
         isStunned = true;
-        float timer = 0;
-        while(AudioListener.volume > 0f)
-        {
-            AudioListener.volume = Mathf.Lerp(1f, 0f, timer / masterVolumeFadeTime);
-            timer += Time.deltaTime;
-            yield return null;
-        }
-
+        StartCoroutine(FadeMaster());
         headAcheSource.Play();
+
         yield return new WaitForSeconds(headAcheSource.clip.length);
 
-        timer = 0;
+        float timer = 0;
         while (AudioListener.volume < 1f)
         {
             AudioListener.volume = Mathf.Lerp(0f, 1f, timer / masterVolumeFadeTime);
@@ -50,5 +43,16 @@ public class WallCollision : MonoBehaviour
             yield return null;
         }
         isStunned = false;
+    }
+
+    IEnumerator FadeMaster()
+    {
+        float timer = 0f;
+        while (AudioListener.volume > 0f)
+        {
+            AudioListener.volume = Mathf.Lerp(1f, 0f, timer / masterVolumeFadeTime);
+            timer += Time.deltaTime;
+            yield return null;
+        }
     }
 }
