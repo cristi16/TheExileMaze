@@ -3,14 +3,14 @@ using System.Collections;
 
 public class FitToScreen : MonoBehaviour
 {
-
-    void Start()
+    void Awake()
     {
-        
+        AdjustScale();
     }
 
-    void Update()
+    public void AdjustScale()
     {
-
+        float aspectRatio = (float)Screen.width / (float)Screen.height;
+        transform.localScale = new Vector3(Camera.main.orthographicSize * 2 * aspectRatio, transform.localScale.y, transform.localScale.z);
     }
 }

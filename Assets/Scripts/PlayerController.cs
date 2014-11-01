@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        log = GameObject.FindGameObjectWithTag("Log").GetComponent<TextMesh>();
+        //log = GameObject.FindGameObjectWithTag("Log").GetComponent<TextMesh>();
         Input.gyro.enabled = true;
     }
     
