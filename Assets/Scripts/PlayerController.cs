@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
             TouchUpdate();
     #endif
 
-        log.text = Input.gyro.userAcceleration.ToString();
+        //log.text = Input.gyro.userAcceleration.ToString();
     }
 
     void EditorUpdate()
