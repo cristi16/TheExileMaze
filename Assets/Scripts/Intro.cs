@@ -23,6 +23,15 @@ public class Intro : MonoBehaviour
         Application.LoadLevel(Application.loadedLevel + 1);
     }
 
+    void Update()
+    {
+        foreach(var touch in Input.touches)
+            if(touch.tapCount == 2)
+            {
+                Application.LoadLevel(Application.loadedLevel + 1);
+            }
+    }
+
 
     IEnumerator Fade(Texture2D image, AnimationCurve curve)
     {
