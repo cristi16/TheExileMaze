@@ -115,6 +115,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void FadeOutFootSteps(float time)
+    {
+        StartCoroutine(FadeOut(time));
+    }
+
     IEnumerator FadeOut(float time)
     {
         float timer = 0f;

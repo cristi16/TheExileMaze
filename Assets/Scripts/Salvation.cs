@@ -26,15 +26,18 @@ public class Salvation : MonoBehaviour {
         foreach (AudioSource source in GameObject.FindGameObjectWithTag("Salvation").GetComponentsInChildren<AudioSource>())
             source.ignoreListenerVolume = true;
         AudioListener.volume = 0;
+        player.FadeOutFootSteps(1f);
         audio.Play();
         player.ignoreInput = true;
 
         yield return new WaitForSeconds(audio.clip.length);
 
-        StartCoroutine( FadeOut(audio, 1f) );
+        yield return new WaitForSeconds(5f);
+
+        StartCoroutine( FadeOut(audio, 5f) );
         foreach (AudioSource source in GameObject.FindGameObjectWithTag("Salvation").GetComponentsInChildren<AudioSource>())
-            StartCoroutine(FadeOut(source, 1f));
-        yield return new WaitForSeconds(1f);
+            StartCoroutine(FadeOut(source, 5f));
+        yield return new WaitForSeconds(4f);
         Application.LoadLevel(Application.loadedLevel);
     }
 
