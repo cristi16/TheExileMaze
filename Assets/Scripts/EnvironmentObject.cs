@@ -14,6 +14,6 @@ public class EnvironmentObject : MonoBehaviour
     {
         impactSoundSource.transform.position = hitPoint.point;
         impactSoundSource.Play();
-        impactSoundSource.GetComponent<LowPassFilter>().sourcePoint = hitPoint.point;
+        impactSoundSource.GetComponent<LowPassFilter>().sourcePoint = impactSoundSource.transform;
     }
 }

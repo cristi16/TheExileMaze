@@ -10,7 +10,7 @@ public class LowPassFilter : MonoBehaviour
     public float regularFrequency = 5000f;
 
     [HideInInspector]
-    public Vector3 sourcePoint;
+    public Transform sourcePoint;
     private GameObject player;
     private AudioLowPassFilter filter;
 
@@ -19,14 +19,15 @@ public class LowPassFilter : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         filter = GetComponent<AudioLowPassFilter>();
         if (useTransformAsSource)
-            sourcePoint = transform.position;
+            sourcePoint = this.transform;
     }
 
     void Update()
     {
         if(audio.isPlaying)
         {
-            float dot = Vector3.Dot(player.transform.forward, (sourcePoint - player.transform.position).normalized);
+            Debug.DrawLine(player.transform.position, sourcePoint.position, Color.red);
+            float dot = Vector3.Dot(player.transform.forward, (sourcePoint.position - player.transform.position).normalized);
             if (dot > 0)
             {
                 filter.cutoffFrequency = regularFrequency;
