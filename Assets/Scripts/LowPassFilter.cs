@@ -26,7 +26,7 @@ public class LowPassFilter : MonoBehaviour
     {
         if(audio.isPlaying)
         {
-            Debug.DrawLine(player.transform.position, sourcePoint.position, Color.red);
+            //Debug.DrawLine(player.transform.position, sourcePoint.position, Color.red);
             float dot = Vector3.Dot(player.transform.forward, (sourcePoint.position - player.transform.position).normalized);
             if (dot > 0)
             {
