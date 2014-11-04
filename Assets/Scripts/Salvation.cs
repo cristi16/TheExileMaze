@@ -32,13 +32,14 @@ public class Salvation : MonoBehaviour {
 
         yield return new WaitForSeconds(audio.clip.length);
 
-        yield return new WaitForSeconds(5f);
+        GameObject.FindGameObjectWithTag("UICamera").GetComponent<Instructions>().DoEnding();
+        yield return new WaitForSeconds(3f);
 
-        StartCoroutine( FadeOut(audio, 5f) );
+        StartCoroutine( FadeOut(audio, 9f) );
         foreach (AudioSource source in GameObject.FindGameObjectWithTag("Salvation").GetComponentsInChildren<AudioSource>())
-            StartCoroutine(FadeOut(source, 5f));
-        yield return new WaitForSeconds(4f);
-        Application.LoadLevel(Application.loadedLevel);
+            StartCoroutine(FadeOut(source, 9f));
+        yield return new WaitForSeconds(9f);
+        
     }
 
     IEnumerator FadeOut(AudioSource audio, float time)
