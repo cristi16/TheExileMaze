@@ -35,10 +35,10 @@ public class Salvation : MonoBehaviour {
         GameObject.FindGameObjectWithTag("UICamera").GetComponent<Instructions>().DoEnding();
         yield return new WaitForSeconds(3f);
 
-        StartCoroutine( FadeOut(audio, 9f) );
+      /*  StartCoroutine( FadeOut(audio, 9f) );
         foreach (AudioSource source in GameObject.FindGameObjectWithTag("Salvation").GetComponentsInChildren<AudioSource>())
             StartCoroutine(FadeOut(source, 9f));
-        yield return new WaitForSeconds(9f);
+        yield return new WaitForSeconds(9f); */
         
     }
 

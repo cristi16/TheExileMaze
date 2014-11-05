@@ -30,6 +30,10 @@ public class Intro : MonoBehaviour
             {
                 Application.LoadLevel(Application.loadedLevel + 1);
             }
+			if(Input.GetKey("s"))
+			{
+				Application.LoadLevel(Application.loadedLevel + 1);
+			}
     }
 
 
