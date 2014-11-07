@@ -25,10 +25,10 @@ public class PlayerController : MonoBehaviour
     {
         if (ignoreInput) return;
 
-    #if UNITY_EDITOR
-            EditorUpdate();
-    #else
+    #if UNITY_ANDROID || UNITY_IPHONE
             TouchUpdate();
+    #else
+            EditorUpdate();
     #endif
 
         //log.text = Input.gyro.userAcceleration.ToString();
